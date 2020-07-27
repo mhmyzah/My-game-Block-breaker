@@ -9,10 +9,12 @@ public class Paddle : MonoBehaviour
     [SerializeField] float ScreenWidth = 16f;
     [SerializeField] Sprite[] paddleSprites;
     [SerializeField] GameObject laser;
+    GameStatus status;
     // Start is called before the first frame update
     void Start()
     {
-        
+        status = FindObjectOfType<GameStatus>();
+
     }
 
     // Update is called once per frame
@@ -22,9 +24,16 @@ public class Paddle : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
             TurnToleaser();
             float mousePosInUnits =Input.mousePosition.x/Screen.width* ScreenWidth;
-        Vector2 paddlePose = new Vector2(transform.position.x, transform.position.y );
-        paddlePose.x = Mathf.Clamp(mousePosInUnits, min, max);
+        if (!TraceBall())
+        {
+            Vector2 paddlePose = new Vector2(transform.position.x, transform.position.y);
+            paddlePose.x = Mathf.Clamp(mousePosInUnits, min, max);
             transform.position = paddlePose;
+        } else {
+            Vector2 paddlePose = new Vector2(FindObjectOfType<Ball>().transform.position.x,transform.position.y);
+            paddlePose.x = Mathf.Clamp(FindObjectOfType<Ball>().transform.position.x, min, max);
+            transform.position = paddlePose;
+        }
 
 
     }
@@ -45,5 +54,9 @@ public class Paddle : MonoBehaviour
 
 
         }
+    }
+    public bool TraceBall()
+    {
+       return  status.ReturntraceBallEnable();
     }
 }

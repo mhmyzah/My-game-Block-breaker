@@ -48,6 +48,7 @@ MonoBehaviour:
   pointsPerBlock: 10
   totalPoints: 0
   gameScore: {fileID: 4591833347137146721}
+  traceBallEnable: 1
 --- !u!1001 &4591833346729566895
 PrefabInstance:
   m_ObjectHideFlags: 0

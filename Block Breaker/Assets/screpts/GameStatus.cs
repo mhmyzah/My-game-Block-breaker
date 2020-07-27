@@ -9,6 +9,7 @@ public class GameStatus : MonoBehaviour
     [SerializeField] int pointsPerBlock=85;
     [SerializeField] int totalPoints = 0;
     [SerializeField] TextMeshProUGUI gameScore;
+    [SerializeField] private bool traceBallEnable = false;
     int numberof = 0;
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,10 @@ public class GameStatus : MonoBehaviour
     {
         Time.timeScale = gameSpeed;
     }
+    public bool ReturntraceBallEnable()
+    {
+        return traceBallEnable;
+    }
     public void AddScore()
     {
         totalPoints += pointsPerBlock;
@@ -45,5 +50,5 @@ public class GameStatus : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
+    
 }
