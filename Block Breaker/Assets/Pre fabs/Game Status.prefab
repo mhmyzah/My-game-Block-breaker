@@ -56,6 +56,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5003464793246702687}
     m_Modifications:
+    - target: {fileID: 1753017806, guid: b53af75cfc1a6844c8ce56ae2c2aecf9, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753017806, guid: b53af75cfc1a6844c8ce56ae2c2aecf9, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753017806, guid: b53af75cfc1a6844c8ce56ae2c2aecf9, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753017806, guid: b53af75cfc1a6844c8ce56ae2c2aecf9, type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
     - target: {fileID: 4591833347897950670, guid: b53af75cfc1a6844c8ce56ae2c2aecf9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

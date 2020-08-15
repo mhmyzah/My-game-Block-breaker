@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    //config
     [SerializeField] AudioClip blockBreakSound ;
     [SerializeField] GameObject vxEffect;
     [SerializeField] int maxHits;
     [SerializeField] Sprite[] hitSprites; 
 
-    //cach
     Level level ;
     GameStatus status;
-    //sate vars
     [SerializeField] int timesHits;
     private void Start()
     {
@@ -63,7 +60,6 @@ public class Block : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There is eror inm sporite"+ gameObject.name);
         }
         }
 
@@ -72,8 +68,8 @@ public class Block : MonoBehaviour
         PlaySparkel();
         AudioSource.PlayClipAtPoint(blockBreakSound, Camera.main.transform.position);
         Destroy(gameObject, 0);
-        level.BlockDistroyed();
         status.AddScore();
+        level.BlockDistroyed();
     }
     private void PlaySparkel()
     {

@@ -48,6 +48,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -95,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393da0318de02594aabc5146ca4dd1ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: 1.25
-  max: 14.75
+  min: -1.375
+  max: 17.39
   ScreenWidth: 16
   paddleSprites:
   - {fileID: 21300000, guid: f69692e31b23c894087ffb585e2d0c90, type: 3}

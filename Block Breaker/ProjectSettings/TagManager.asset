@@ -6,6 +6,8 @@ TagManager:
   tags:
   - BreakableBlocks
   - UnBreakableBlocks
+  - DELETESCORE
+  - DeleteButton
   layers:
   - Default
   - TransparentFX

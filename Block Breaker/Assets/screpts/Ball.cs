@@ -14,12 +14,9 @@ public class Ball : MonoBehaviour
     
     Vector2[] repeated = new Vector2[3];
     int i = 0;
-    //cached Component
     AudioSource MyAudioSource;
     bool hasStarted = false;
-    // Start is called before the first frame update
 
-    //satate 
     Vector2 paddleToBallVector; 
     void Start()
     {
@@ -28,12 +25,15 @@ public class Ball : MonoBehaviour
         myRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!hasStarted) { 
-        LockBallToPaddle();
-        LaunchBallOnMouseClick();
+        if (!hasStarted)
+        {
+            LockBallToPaddle();
+            LaunchBallOnMouseClick();
+        }
+        if (Input.GetKeyDown(KeyCode.B)) { 
+        FixBoring();
     }
     }
 
@@ -60,14 +60,19 @@ public class Ball : MonoBehaviour
         if (hasStarted) {
             AudioClip clip = ballSounds[UnityEngine.Random.Range(0, ballSounds.Length)];
             MyAudioSource.PlayOneShot(clip);
-            FixBoring();
+            
             myRigidBody2D.velocity += velocityTweak;
         }
 
        
     }
+    public void distroyBall()
+    {
+        Destroy(gameObject);
+    }
 
-    private void FixBoring()
-    {  
+    public void FixBoring()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(7, 7);
      }
 }

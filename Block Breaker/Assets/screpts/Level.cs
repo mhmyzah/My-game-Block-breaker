@@ -7,12 +7,14 @@ public class Level : MonoBehaviour
 {
    
     [SerializeField] int breakAbleBlocks ;
-    // Start is called before the first frame update
    [SerializeField] SceneLoader sceneLoader;
+    GameStatus status;
 
     private void Start()
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
+        status = FindObjectOfType<GameStatus>();
+
     }
     public void CountBreakAbleBlocks()
     {
@@ -27,6 +29,7 @@ public class Level : MonoBehaviour
         if (breakAbleBlocks <= 0) 
         {
             sceneLoader.LoadNextScene();
+           
         }
 
     }
